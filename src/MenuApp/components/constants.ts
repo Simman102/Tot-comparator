@@ -261,4 +261,6 @@ export const bodyFields = [
     "???",
     "???",
     "???",
-]
+];
+
+export const BODY_FIELDS_LENGTH = bodyFields.length;
