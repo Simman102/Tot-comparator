@@ -5,6 +5,8 @@ import AreaButtonPair from "./components/AreaButtonPair";
 export default function App() {
     const [isLeftHidden, setLeftHidden] = useState(false);
     const [isRightHidden, setRightHidden] = useState(false);
+    const [leftBodyFields, setLeftBodyFields] = useState([]);
+    const [rightBodyFields, setRightBodyFields] = useState([]);
 
     return <Grid container spacing={2}>
         <Grid size={12}>
@@ -18,10 +20,20 @@ export default function App() {
             </Typography>
         </Grid>
         <Grid size={6}>
-            <AreaButtonPair isHidden={isLeftHidden} setHidden={setLeftHidden}/>
+            <AreaButtonPair
+                isHidden={isLeftHidden}
+                setHidden={setLeftHidden}
+                oppositeBodyFields={rightBodyFields}
+                setOwnBodyFields={setLeftBodyFields}
+            />
         </Grid>
         <Grid size={6}>
-            <AreaButtonPair isHidden={isRightHidden} setHidden={setRightHidden}/>
+            <AreaButtonPair
+                isHidden={isRightHidden}
+                setHidden={setRightHidden}
+                oppositeBodyFields={leftBodyFields}
+                setOwnBodyFields={setRightBodyFields}
+            />
         </Grid>
     </Grid>
 }
